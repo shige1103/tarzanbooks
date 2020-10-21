@@ -1,6 +1,10 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>My Portfolio</h1>
-    <h1>～自己紹介＆写真共有ページ～</h1>
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>My Portfolio</h1>
+      <h1>～自己紹介＆写真共有ページ～</h1>
+    </div>
   </div>
-</div>
+<% end %>
