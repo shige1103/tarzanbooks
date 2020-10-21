@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     <% else %>
-      <a class="navbar-brand" href="<%= login_path %>">ログイン</a>
+      <a class="navbar-brand" href="/">ホーム</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,14 +31,23 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     <% end %>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-brand">
+        <% if logged_in? %>
+          <li class="list-unstyled">ようこそ！<%= @user.name %>さん</li>
+        <% else %>
+          <li class="list-unstyled">ようこそ！ゲストさん</li>
+        <% end %>
+      </ul>
+    </div>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
-          <li class="nav-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+          <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
         <% else %>
-          <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>
