@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-brand">
         <% if logged_in? %>
-          <li class="list-unstyled">ようこそ！<%= @user.name %>さん</li>
+          <li class="list-unstyled">ようこそ！<%= current_user.name %>さん</li>
         <% else %>
           <li class="list-unstyled">ようこそ！ゲストさん</li>
         <% end %>

@@ -1,10 +1,27 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+ <div class="center jumbotron">
+    <div class="text-center">
+      <h1>My Portfolio</h1>
+      <h1>～自己紹介＆写真共有ページ～</h1>
+        <%= link_to 'Profile', user_path(current_user), class: 'btn btn-primary btn-block' %></li>
+    </div>
+  </div>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h2>PHOTOS</h2>
+    </div>
+  </div>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h2>PHOTOS LIST</h2>
+    </div>
+  </div>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
       <h1>My Portfolio</h1>
       <h1>～自己紹介＆写真共有ページ～</h1>
+      <%= link_to 'ログイン', login_path, class: 'btn btn-primary btn-block' %></li>
     </div>
   </div>
 <% end %>
