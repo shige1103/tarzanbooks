@@ -1,5 +1,11 @@
 <div class="row">
   <aside class="col-sm-12">
+    <div class="text-left">
+      <%= link_to 'プロフィール変更', edit_user_path(@user) %>
+    </div>
+  </aside>
+  
+  <aside class="col-sm-12">
     <table class="table table-bordered">
       <tr>
         <th>職業</th>
@@ -7,20 +13,39 @@
       </tr>
       <tr>
         <th>名前</th>
-        <td><%= @user.first_name %><%= @user.last_name %></td>
+        <td><%= @user.last_name %> <%= @user.first_name %></td>
       </tr>
-      <tr>
       <tr>
         <th>自己紹介</th>
         <td><%= @user.profile %></td>
       </tr>
-      <tr>
     </table>
-      
   </aside>
-  <div class="text-right">
-    <aside>
-      <%= link_to 'プロフィール変更', edit_user_path(@user) %>
-    </aside>
-  </div>
+  
+  <aside class="col-sm-12">
+    <div class="center jumbotron">
+      <div class="text-center">
+        <h2>SKILL</h2>
+      </div>
+    </div>
+  </aside>
+  <aside class="col-sm-6">
+    <div class="center jumbotron">
+      <div class="text-center">
+        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 250 }) %>" alt="">
+      </div>
+    </div>
+  </aside>
+  <aside class="col-sm-6">
+    <div class="center jumbotron">
+      <div class="text-center">
+        <%= @skill.skill_title %>
+      </div>
+    </div>
+    <div class="center jumbotron">
+      <div class="text-center">
+        <%= @skill.skill_description %>
+      </div>
+    </div>
+  </aside>
 </div>

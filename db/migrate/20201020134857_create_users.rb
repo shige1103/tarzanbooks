@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.timestamp :icon
       t.string :new_email
       t.string :new_password
+      t.string :image
 
       t.timestamps
     end

@@ -6,17 +6,13 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create, :edit] do
-    member do
-      get :photos
-    end
-  end
+  resources :users, only: [:index, :show, :new, :create, :edit] 
   
   put 'users/:id/edit', to: 'users#edit'
   
-  patch '/users/:id', to: 'users#update'
+  put '/users/:id', to: 'users#update'
+  get 'users/:id/edit', to: 'users#edit'
   
-  resources :photos, only: [:new] 
-  resources :posts, only: [:create, :destroy]
+  resources :posts
   resources :skills, only: [:create, :edit, :destroy]
 end

@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_001900) do
+ActiveRecord::Schema.define(version: 2020_10_31_081638) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "photo"
+    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_001900) do
     t.timestamp "icon"
     t.string "new_email"
     t.string "new_password"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

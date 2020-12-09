@@ -1,0 +1,15 @@
+<%= form_with(model: @user, local: true, method: :put) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <%= f.label :skill_title, 'Skill Title' %>
+    <%= f.text_field :skill_title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :skill_description, 'Skill Descriotion' %>
+    <%= f.text_field :skill_description, class: 'form-control' %>
+  </div>
+  
+  <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
+<% end %>

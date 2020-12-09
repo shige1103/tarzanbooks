@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
+  before_action :correct_user, only: [:edit]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(50)
@@ -7,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @skill = @user.skills.page(params[:page])
   end
 
   def new
@@ -41,13 +43,12 @@ class UsersController < ApplicationController
     end
   end
   
-  def photos
-    @user = User.find(params[:id])
-  end
-  
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profession, :first_name, :last_name, :profile,)
+  end
+  
+  def correct_user
   end
 end
